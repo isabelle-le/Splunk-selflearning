@@ -6,7 +6,6 @@ It is guideline for OS Linux. You need to ensure security group (networking) ope
 https://www.splunk.com/en_us/download/splunk-enterprise.html#tabs/linux
 
 # Step 2: Log into VM with key pair
-
 open your terminal
 make new folder (ex:SSH) mkdir SSH
 move key file(ex filename.pem) to the folder: mv filename.pem SSH
