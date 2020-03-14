@@ -29,7 +29,7 @@ Advance: If you have a AWS account and familiar with EC2 instances. You can inst
 
 #TODO: linux command code in another dir.
 
-# Step 2: Splunk Fundamentals 2 costs $2000. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
+# Step 2: Splunk Fundamentals 2. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
 
 
 #TODO : to be continue.
