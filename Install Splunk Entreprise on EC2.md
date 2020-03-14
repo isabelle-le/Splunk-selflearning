@@ -43,7 +43,9 @@ vim /opt/splunk/etc/system/local/user-seed.conf
 write this to the file
 
 [user_info]
+
 USERNAME= admin
+
 PASSWORD= $plunkEntr3prise (strong pw of your choice)
 
 *press SHIFT and type :w to save then :q to exist
