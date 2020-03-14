@@ -18,10 +18,15 @@ streaming, non-streaming, orchestrating, dataset processing, generating, transfo
 # How:
 # Step 1: Splunk Fundamentals 1 - FREE - Splunk User Cert
 As I mentioned above, Splunk is not an open source tool and its course is expensive(yes, it is. Splunk CEO, it is your job to make e-learning course avaiable as 20% of your current price). However, there is one beginner course you should take which is Splunk Fundamentals 1 (https://www.splunk.com/en_us/training.html). 
+
 Price: Free
+
 How long will it take? 2 days for me with all quizz and lab pratices and final exam to have a cert.
+
 What for? If you finished this course + pay less then $150 and pass exam. You will have Splunk User Cert
+
 Advance: If you have a AWS account and familiar with EC2 instances. You can install Splunk Entreprise to your EC2 instance. 
+
 #TODO: linux command code in another dir.
 
 # Step 2: Splunk Fundamentals 2 costs $2000. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
