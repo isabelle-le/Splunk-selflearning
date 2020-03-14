@@ -1,0 +1,39 @@
+# Install Splunk Entreprise on EC2. It runs very quickly
+Step 0: Assuming that you re familiar with AWS platform and EC2 instance.
+The sc
+Step 1: Download
+username: ThuHuongLE
+pw: $plunkEntr3prise
+Check disk space on ec2 : df -hT /dev/xvda1
+
+Step 2: Create VM, log in with key pair
+>>make new folder >> move key to the folder >> chmod 400 >> connect (ssh username@ip_add -i key.pem)
+>> mkdir SSH >> mv filename.pem SSH >> chmod400 filename.pem >> ssh ec2-user@ip-name -i filename.pem
+
+Step 3: Copy rpm to cloud server
+scp -i /Users/trungngo/Downloads/SSH/Stockholm-t3micro-KPpem.pem splunk-7.2.4.2-fb30470262e3-linux-2.6-x86_64.rpm ec2-user@13.48.57.49:/tmp
+
+Step 4: install rpm -i directory
+sudo su
+rpm -i /tmp/splunk-7.2.4.2-fb30470262e3-linux-2.6-x86_64.rpm 
+to check 
+ll /opt/splunk to see all dir (pwd)
+
+
+Step 5: create admin credential
+vim /opt/splunk/etc/system/local/user-seed.conf
+write
+[user_info]
+USERNAME= admin
+PASSWORD= $plunkEntr3prise
+press SHIFT and type :w to save then :q to exist
+
+Step 6: boot for production
+ll /opt/splunk to see all folder, care for bin
+/opt/splunk/bin/splunk enable boot-start --accept-license
+to check ll /etc/systemd/system , to see Splunkd.service
+systemctl status Splunkd , status is disable
+systemctl start Splunkd
+ll var/log/splunk/, to check a bunch of log file
+
+Step 7 : access to public IP4:8000 port
