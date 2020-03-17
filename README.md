@@ -10,7 +10,7 @@ Stage 3: record visual learning material(video on youtube) to help others. Splun
            
 # Why Splunk? 
 Beside the job requirement, Splunk is a big data tool which is good for anykinds of data. The basic processing components are like any other big data tool. Which are:
-1. Indexer : its input is raw data (log file, IoT..), it is events(think of event as row in your struture database). Its output is index under directory by time frame(as table). 
+1. Indexer : its input is raw data (log file, IoT..), storage as events(think of event as row in your struture database). The output is index under directory by time frame(think as table in your structure database). 
 2. Search Head: you will use SPL commands to search and visualize your data. At the high level, SPL have 7 types, which are
 streaming, non-streaming, orchestrating, dataset processing, generating, transforming and custom commands.
 3. Forwarder:  In the real application, you will use forwarder to comsume data and forward them in Indexer (Like AWS Kinesis )
