@@ -26,10 +26,19 @@ How long will it take? 2 days for me with all quizz and lab pratices and final e
 What for? If you finished this course + pay less then $150 and pass exam. You will have Splunk User Cert
 
 Advance: If you have a AWS account and familiar with EC2 instances. You can install Splunk Entreprise to your EC2 instance. 
-
-#TODO: linux command code in another dir.
+*Explaination is avaiable at Install Splunk Entreprise on EC2
 
 # Step 2: Splunk Fundamentals 2. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
+PDF
 
+2. Beyond saerch fundamentals
 
-#TODO : to be continue.
+3. Using transforming commands for visualizations
+
+4. Using trendlines, mapping and single value commands
+
+5. Filtering & Formating results
+
+6. Correlating Events
+
+7. Introduction to Knowledges objects
