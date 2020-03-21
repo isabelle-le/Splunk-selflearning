@@ -1,0 +1,60 @@
+# I.Tags 
+# Describe tags and their uses
+Grouping event based on field value. non technical user can easy search by tag
+1. Tags are case sensitive 
+
+2. Tags are descriptive names for key value pairs
+
+3. One or more tags per field/value combination
+	
+# Create and use tag
+
+Example: create two tags, suceess status and failed status based on status field in the access_combined_wcookies
+* tag = success_status for status = 200
+
+![Open edit tag from even action](image./tags1.png)
+
+![Fill in tag_name and save](image./tags2.png)
+
+![search by tag](image./tags3.png)
+
+* tag = failed_status for all others status= 400,500...
+![Repeat the above process and go to Setting > Tags to see failed_status](image./tags4.png)
+
+![input other status values](image./tags5.png)
+
+![search by tags](image./tags6.png)
+
+* search tags by SPL
+![tags outputfield inclname inclvalue field_name](image./tags7.png)
+
+Quiz: 
+Which search would limit an "alert" tag to the "host" field?  tag::host=alert tag=alert tag=al*
+
+Tags are descriptive names for key value pairs
+
+You can only add one tag per field value pair. False
+
+# II.Event Types:
+# Describe event types and their uses
+A method of categorizing events based on a search. There are 3 ways to create event type from Splunk web and one from eventype.conf
+
+Restrictions:
+1. Search strings that define vent types cannot reference tags
+
+2. Search strong can not include pipe operator, sub search
+
+3. Should not defined an event type by a simple search that uses the saved search command to reference a report name 
+
+# Create an event type
+
+Example: Create an even type which are dynamic to all action values
+
+SPL : index=main sourcetype=access_*
+
+![create eventtype from Save As option](image./eventypes1.png)
+
+![Check eventypes](image./eventypes1.png)
+
+* Conclusion: Tags and eventypes can be good to non technical user to easily search the data. However more tags/eventypes, more cost in search engine.
+* Note: search time operation order: inline field extraction(no field transform > field extraction (use field transform) > automatic key-value field extraction > Field aliases > Calculated fields > Lookup > Event types > Tags
