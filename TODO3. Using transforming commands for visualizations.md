@@ -23,11 +23,15 @@ Example: data set covid-19 in france (look at model 13 to find dataset)
 |chart max(cas_confirmes) over regions
 
 ![](image./pie.png)
+
 Personally I am not a fan of pie chart, it can be viz much better with bar chart( in every aspect).
+
 * Bar : Same command 
+
 ![](image./bar.png)
 
 * Column : Same command
+
 ![](image./column.png)
 
 * Line 
