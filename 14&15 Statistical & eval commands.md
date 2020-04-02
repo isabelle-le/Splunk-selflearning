@@ -168,9 +168,7 @@ index=main sourcetype="data-sensor"
 # Note:
 * [custom command video](https://www.youtube.com/watch?v=sJRTIyZZtbM)
 * [command by category document] (https://docs.splunk.com/Documentation/Splunk/8.0.3/SearchReference/Commandsbycategory)
-
-append: Appends subsearch results to current results.
-selfjoin: Joins results with itself.
+* append: Appends subsearch results to current results.
 
 # 15. Exploring eval Command Functions
 
