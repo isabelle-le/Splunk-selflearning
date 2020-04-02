@@ -29,7 +29,7 @@ Advance: If you have a AWS account and familiar with EC2 instances. You can inst
 *Explaination is avaiable at Install Splunk Entreprise on EC2
 
 # Step 2: Splunk Fundamentals 2. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
-PDF
+* PDF material is avaiable in this dir.
 
 2. Beyond saerch fundamentals
 
@@ -42,3 +42,27 @@ PDF
 6. Correlating Events
 
 7. Introduction to Knowledges objects
+
+8. Creating and Managing Fields
+
+9. Creating Field Aliases and Calculated Fields
+
+10. Creating Tags and Event Types
+
+11. Creating and Using Macros
+
+12. Creating and Using Workflow Actions
+
+13. Creating Data Models
+
+# Step 3: Splunk Fundamentals 3. PDF document is not avaiable, thus, learning document based on their course overview
+Course Topics
+14. Statistical Commands
+15. eval Commands
+16. Lookups
+17. Alert Actions
+18. Advanced Field Creation and Management 
+19. Working with Self-Describing Data and Files 
+20. Advanced Macros
+21. Using Acceleration Options
+
