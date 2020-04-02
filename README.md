@@ -17,7 +17,7 @@ streaming, non-streaming, orchestrating, dataset processing, generating, transfo
 
 # How:
 # Step 1: Splunk Fundamentals 1 - FREE - Splunk User Cert
-As I mentioned above, Splunk is not an open source tool and its course is expensive(yes, it is. Splunk CEO, it is your job to make e-learning course avaiable as 20% of your current price). However, there is one beginner course you should take which is Splunk Fundamentals 1 (https://www.splunk.com/en_us/training.html). 
+As I mentioned above, Splunk is not an open source tool and its course is expensive(yes, it is. Splunk CEO, it is your job to make e-learning course avaiable as 20% of your current price). However, there is one beginner course you should take which is ![Splunk Fundamentals 1 Free - link](https://www.splunk.com/en_us/training.html). 
 
 Price: Free
 
