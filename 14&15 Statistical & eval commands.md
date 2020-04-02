@@ -114,7 +114,7 @@ index="coronavirus" sourcetype="auto_test"
 |sort -hospitalises
 |fields - prev_h
 
-![](image./streamsstats1.png)
+![](image./streamstats1.png)
 
 # Note:
 * [custom command video](https://www.youtube.com/watch?v=sJRTIyZZtbM)
