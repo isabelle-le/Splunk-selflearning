@@ -29,7 +29,7 @@ Advance: If you have a AWS account and familiar with EC2 instances. You can inst
 *Explaination is avaiable at Install Splunk Entreprise on EC2
 
 # Step 2: Splunk Fundamentals 2. Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
-* PDF material is avaiable in this dir.
+![PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
 
 2. Beyond saerch fundamentals
 
@@ -56,13 +56,23 @@ Advance: If you have a AWS account and familiar with EC2 instances. You can inst
 13. Creating Data Models
 
 # Step 3: Splunk Fundamentals 3. PDF document is not avaiable, thus, learning document based on their course overview
+
 ![Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Fundamentals3-Description.pdf)
+
 14. Statistical Commands
+
 15. eval Commands
+
 16. Lookups
+
 17. Alert Actions
+
 18. Advanced Field Creation and Management 
+
 19. Working with Self-Describing Data and Files 
+
 20. Advanced Macros
+
 21. Using Acceleration Options
+
 
