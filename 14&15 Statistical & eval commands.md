@@ -14,7 +14,7 @@ stats-function(field)
 
 * Example : index=coronavirus sourcetype=auto_test granularite = departement
 |stats max(hospitalises), max(deces) by maille_nom
-|sort- max(hospitalises)![](images./.png)
+|sort- max(hospitalises)
 
 ![](image./stats.png)
 ## Using fieldsummary
@@ -30,7 +30,7 @@ stats-function(field)
 
 * Example : index=coronavirus sourcetype=auto_test |fieldsummary
 
-![](images./fieldsummary.png)
+![](image./fieldsummary.png)
 ## Using appendpipe
 * Return : Appends the result of the subpipeline applied to the current result set to results. Subpipeline is not a proper search (can not run individually)
 
@@ -48,7 +48,7 @@ stats-function(field)
 | appendpipe run_in_preview=true
     [|stats max(reanimation) by maille_nom, hospitalises,deces]
 
-![](images./appendpipe.png)
+![](image./appendpipe.png)
 
 index="coronavirus" sourcetype="auto_test" date >"2020-03-30" maille_code=DEP-78
 |sort -date 
@@ -59,7 +59,7 @@ index="coronavirus" sourcetype="auto_test" date >"2020-03-30" maille_code=DEP-78
 |eval hospitalises = 'infected_ratio' + "%"]
 |table date,maille_nom,hospitalises,reanimation,deces,gueris,source_nom
 
-![](images./appendpipe2.png)
+![](image./appendpipe2.png)
 ## Using eventstats
 * Return : 
 
@@ -71,7 +71,7 @@ index="coronavirus" sourcetype="auto_test" date >"2020-03-30" maille_code=DEP-78
 * ![Document](https://docs.splunk.com/Documentation/Splunk/8.0.2/SearchReference/Eventstats)
 
 * Example : 
-![](images./.png)
+![](image./.png)
 
 ## Using streamstats
 
@@ -114,7 +114,7 @@ index="coronavirus" sourcetype="auto_test"
 |sort -hospitalises
 |fields - prev_h
 
-![](images./streamsstats1.png)
+![](image./streamsstats1.png)
 
 # Note:
 * [custom command video](https://www.youtube.com/watch?v=sJRTIyZZtbM)
