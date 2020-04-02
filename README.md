@@ -56,7 +56,7 @@ Advance: If you have a AWS account and familiar with EC2 instances. You can inst
 13. Creating Data Models
 
 # Step 3: Splunk Fundamentals 3. PDF document is not avaiable, thus, learning document based on their course overview
-Course Topics
+![Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Fundamentals3-Description.pdf)
 14. Statistical Commands
 15. eval Commands
 16. Lookups
