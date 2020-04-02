@@ -61,46 +61,56 @@ index="coronavirus" sourcetype="auto_test" date >"2020-03-30" maille_code=DEP-78
 
 ![](image./appendpipe2.png)
 ## Using eventstats
-* Return : 
+* Return :  new fields of summary statistics (All STATS funcs)
 
-* Syntax : 
+* Syntax : eventstats [allnum=bool] stats-agg-term ...[by-clause]
 
-[maxvals]: Optional args. Specifies the maximum distinct values to return for each field. Default is 100
+[allnum=bool]: Default is false.  If set to true, computes numerical statistics on each field, if and only if ,all of the values of that field are numerical. If you have a BY clause, the allnum argument applies to each group independently.
  
-
 * ![Document](https://docs.splunk.com/Documentation/Splunk/8.0.2/SearchReference/Eventstats)
 
-* Example : 
-![](image./.png)
+* Example : New field(today_h) of nb of hospitalises today( last = newest data)
+
+index="coronavirus" sourcetype="auto_test" 
+| where in  (maille_code,"DEP-75","DEP-77","DEP-78","DEP-91","DEP-92","DEP-93","DEP-94","DEP-95")
+|sort 16 -date 
+|table date,maille_nom,hospitalises,reanimation,deces,gueris
+|sort date
+|streamstats first(hospitalises) as yesterday_h by maille_nom
+|eventstats last(hospitalises) as today_h by maille_nom
+
+![](image./eventstats.png)
 
 ## Using streamstats
 
-* Return : 
+* Return : new fields of summary statistics in a streaming manner. (All STATS funcs)
 
-* Syntax : streamstats <stats-agg-term>... [<by-clause>]
+* Syntax : streamstats stats-agg-term... [by-clause]
 
 Optional args: [reset_on_change=bool] 
-		[reset_before="("<eval-expression>")"] 
-		[reset_after="("<eval-expression>")"] 
+		[reset_before="("eval-expression")"] 
+		[reset_after="("eval-expression")"] 
 		[current=bool] 
 		[window=int] 
 		[time_window=span-length] 
 		[global=bool] 
 		[allnum=bool]
 
-[reset_on_change=bool]: Default is false. Specifies that all of the accumulated statistics are reset when the group by fields change. 
+[reset_on_change=bool]: Default is false. If true, reset(donot consider) the accumulated statistics
 
-[time_window=span-length] :
+[time_window=span-length] : specific time for calculations
 
-[current=bool] :
+[current=bool] : Default is true. If true, it uses value from the previous event.
 
-[window=int] :
+[window=int] : specific number of events to use when computing the statistics.
 
-[global=bool] :
+[global=bool] : Default is true. Only work with window=int. If true,
 
 * ![Document](https://docs.splunk.com/Documentation/Splunk/8.0.2/SearchReference/Streamstats)
 
-* Example : Use streamsstats to create a new col that show the prev values of hospitalises, in order to calculate infection_ratio
+* Example : 
+
+1.Use streamsstats to create a new col that show the prev values of hospitalises, in order to calculate infection_ratio
 
 index="coronavirus" sourcetype="auto_test" 
 | where in  (maille_code,"DEP-75","DEP-77","DEP-78","DEP-91","DEP-92","DEP-93","DEP-94","DEP-95")
@@ -115,6 +125,44 @@ index="coronavirus" sourcetype="auto_test"
 |fields - prev_h
 
 ![](image./streamstats1.png)
+
+
+2. 3 difs results (1) reset=f >> remember all previous results (2) reset=t >> reset all results after each by group (3) current=t >> its values from the previous value.
+
+index=main sourcetype="data-sensor"
+| table _time,sensor1,sensor2,sensor3,sensor4
+| sort _time
+| streamstats  reset_on_change=false current=true  count as count_stream_default by sensor1
+| streamstats  reset_on_change=true count as count_stream_reset_t by sensor1
+| streamstats  reset_on_change=true current=f count as count_stream_current_f by sensor1
+| table _time,sensor1,count_stream_default, count_stream_reset_t, count_stream_current_f
+
+
+![](image./streamstats2.png)
+
+3. create alert if any sensor has record 4 consecutive time 0 >> found 1 and 4
+
+index=main sourcetype="data-sensor"
+| table _time,sensor1,sensor2,sensor3,sensor4
+| sort _time
+| streamstats count as count_sensor1 by sensor1 reset_on_change=true 
+| streamstats count as count_sensor2 by sensor2 reset_on_change=true
+| streamstats count as count_sensor3 by sensor3 reset_on_change=true
+| streamstats count as count_sensor4 by sensor4 reset_on_change=true 
+| streamstats count as count_sensor1_n by sensor1 reset_on_change=true time_window=4m window=5 
+| where (sensor1=0 AND count_sensor1 >=4) OR (sensor2=0 AND count_sensor2 >=4)  OR (sensor3=0 AND count_sensor3 >=4)  OR (sensor4=0 AND count_sensor4 >=4) OR (sensor1=0 AND count_sensor1_n >=4)
+
+![](image./streamstats3.png)
+
+4. global example with window=4
+
+index=main sourcetype="data-sensor"
+| table _time,sensor1,sensor2,sensor3,sensor4
+| sort _time
+| streamstats  window=4 global=false  count as count_sensor1 by sensor1
+| table _time,sensor1,count_sensor1
+
+![](image./streamstats4.png)
 
 # Note:
 * [custom command video](https://www.youtube.com/watch?v=sJRTIyZZtbM)
