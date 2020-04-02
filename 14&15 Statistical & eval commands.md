@@ -6,6 +6,7 @@
 * Syntax : stats (stats-function(field) [AS field])... [BY field-list]
 
 stats-function(field)
+
 ![](image./stats-fun.png)
  
 [AS field] [BY field-list]: optional
