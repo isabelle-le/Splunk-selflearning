@@ -6,10 +6,11 @@
 * Syntax : stats (stats-function(field) [AS field])... [BY field-list]
 
 stats-function(field)
-
-![](image./stats-fun.png)
  
 [AS field] [BY field-list]: optional
+
+
+![](image./stats-fun.png)
 
 * ![Document](https://docs.splunk.com/Documentation/Splunk/8.0.3/SearchReference/Stats)
 
