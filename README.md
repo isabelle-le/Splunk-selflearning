@@ -40,7 +40,7 @@ Based on its PDF material, I will do self learning and continue posting my learn
 
 ![PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
 
-           2. Beyond saerch fundamentals(https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
+           [2. Beyond saerch fundamentals](https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
 
            3. Using transforming commands for visualizations
 
