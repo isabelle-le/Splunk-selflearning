@@ -25,7 +25,7 @@ streaming, non-streaming, orchestrating, dataset processing, generating, transfo
 3. Forwarder:  In the real application, you will use forwarder to comsume data and forward them in Indexer (Like AWS Kinesis )
 
 # How:
-## Step 1: Splunk Fundamentals 1 - FREE - Splunk User Cert
+## Splunk Fundamentals 1 - FREE - Splunk User Cert
 As I mentioned above, Splunk is not an open source tool and its course is expensive(yes, it is. Splunk CEO, it is your job to make e-learning course avaiable as 20% of your current price). However, there is one beginner course you should take which is ![Splunk Fundamentals 1 Free - link](https://www.splunk.com/en_us/training.html). 
 
            Price: Free
@@ -35,10 +35,8 @@ As I mentioned above, Splunk is not an open source tool and its course is expens
 Advance: If you have a AWS account and familiar with EC2 instances. You can install Splunk Entreprise to your EC2 instance. 
 [Command line is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Install%20Splunk%20Entreprise%20on%20EC2.md)
 
-## Step 2: Splunk Fundamentals 2. 
-Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
-
-![PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
+## Splunk Fundamentals 2. 
+Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.[PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
 
 [2. Beyond saerch fundamentals](https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
 
@@ -64,11 +62,11 @@ Based on its PDF material, I will do self learning and continue posting my learn
 
 [13. Creating Data Models](https://github.com/isabelle-le/Splunk-selflearning/blob/master/13.Create%20Data%20Models.md)
 
-# Step 3: Splunk Fundamentals 3. 
+## Splunk Fundamentals 3. 
 
 PDF document is not avaiable, thus, learning document based on their course overview
 
-![Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Fundamentals3-Description.pdf)
+[Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Fundamentals3-Description.pdf)
 
 [14. Statistical Commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/14%2615%20Statistical%20%26%20eval%20commands.md)
 
@@ -85,3 +83,12 @@ PDF document is not avaiable, thus, learning document based on their course over
 [20. Advanced Macros](https://github.com/isabelle-le/Splunk-selflearning/blob/master/20.%20Using%20Acceleration%20Options:%20Reports%20and%20Summary%20Indexing.md)
 
 [21. Using Acceleration Options](https://github.com/isabelle-le/Splunk-selflearning/blob/master/21.Using%20Acceleration%20Options:%20Data%20Models%20and%20tsidx%20Files.md)
+
+## Advanced Searching and Reporting
+PDF document is not avaiable, thus, learning document based on their course overview
+
+[Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/AdvancedSearchingReporting72Description.pdf)
+## Analytics and Data Science
+
+## Advanced Dashboards and Visualizations
+
