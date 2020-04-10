@@ -40,29 +40,29 @@ Based on its PDF material, I will do self learning and continue posting my learn
 
 ![PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
 
-           [2. Beyond saerch fundamentals](https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
+[2. Beyond saerch fundamentals](https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
 
-           3. Using transforming commands for visualizations
+[3. Using transforming commands for visualizations](https://github.com/isabelle-le/Splunk-selflearning/blob/master/3.%20Using%20transforming%20commands%20for%20visualizations.md)
 
-           4. Using trendlines, mapping and single value commands
+[4. Using trendlines, mapping and single value commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/4.%20Using%20trendlines%2C%20mapping%20and%20Single%20value%20commands.md)
 
-           5. Filtering & Formating results
+[5. Filtering & Formating results](https://github.com/isabelle-le/Splunk-selflearning/blob/master/5.%20Filtering%20and%20format%20result.md)
 
-           6. Correlating Events
+[6. Correlating Events](https://github.com/isabelle-le/Splunk-selflearning/blob/master/6.%20Correlating%20Events.md)
 
-           7. Introduction to Knowledges objects
+[7. Introduction to Knowledges objects](https://github.com/isabelle-le/Splunk-selflearning/blob/master/7.%20Introduction%20to%20Knowledges%20objects.md)
 
-           8. Creating and Managing Fields
+[8. Creating and Managing Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/8.%20Create%20and%20manage%20field.md)
 
-           9. Creating Field Aliases and Calculated Fields
+[9. Creating Field Aliases and Calculated Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/9.%20Creating%20Field%20Aliases%20and%20Calculated%20Fields.md)
 
-           10. Creating Tags and Event Types
+[10. Creating Tags and Event Types](https://github.com/isabelle-le/Splunk-selflearning/blob/master/10.%20Working%20with%20tags%20and%20even%20types.md)
 
-           11. Creating and Using Macros
+[11. Creating and Using Macros](https://github.com/isabelle-le/Splunk-selflearning/blob/master/11.%20Creating%20and%20Using%20Macros.md)
 
-           12. Creating and Using Workflow Actions
+[12. Creating and Using Workflow Actions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/12.Creating%20and%20Using%20Workflow%20Actions.md)
 
-           13. Creating Data Models
+[13. Creating Data Models](https://github.com/isabelle-le/Splunk-selflearning/blob/master/13.Create%20Data%20Models.md)
 
 # Step 3: Splunk Fundamentals 3. 
 
@@ -70,20 +70,18 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 ![Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Fundamentals3-Description.pdf)
 
-           14. Statistical Commands
+[14. Statistical Commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/14%2615%20Statistical%20%26%20eval%20commands.md)
 
-           15. eval Commands
+[15. eval Commands]()
 
-           16. Lookups
+[16. Lookups](https://github.com/isabelle-le/Splunk-selflearning/blob/master/16.Exploring%20Lookups.md)
 
-           17. Alert Actions
+[17. Alert Actions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/17.%20Exploring%20Alerts.md)
 
-           18. Advanced Field Creation and Management 
+[18. Advanced Field Creation and Management ](https://github.com/isabelle-le/Splunk-selflearning/blob/master/18.%20Advanced%20Field%20Creation%20and%20Management.md)
 
-           19. Working with Self-Describing Data and Files 
+[19. Working with Self-Describing Data and Files ](https://github.com/isabelle-le/Splunk-selflearning/blob/master/19.%20Working%20with%20Self-Describing%20Data%20and%20Files.md)
 
-           20. Advanced Macros
+[20. Advanced Macros](https://github.com/isabelle-le/Splunk-selflearning/blob/master/20.%20Using%20Acceleration%20Options:%20Reports%20and%20Summary%20Indexing.md)
 
-           21. Using Acceleration Options
-
-
+[21. Using Acceleration Options](https://github.com/isabelle-le/Splunk-selflearning/blob/master/21.Using%20Acceleration%20Options:%20Data%20Models%20and%20tsidx%20Files.md)
