@@ -28,21 +28,19 @@ streaming, non-streaming, orchestrating, dataset processing, generating, transfo
 ## Step 1: Splunk Fundamentals 1 - FREE - Splunk User Cert
 As I mentioned above, Splunk is not an open source tool and its course is expensive(yes, it is. Splunk CEO, it is your job to make e-learning course avaiable as 20% of your current price). However, there is one beginner course you should take which is ![Splunk Fundamentals 1 Free - link](https://www.splunk.com/en_us/training.html). 
 
-Price: Free
-
-How long will it take? 2 days for me with all quizz and lab pratices and final exam to have a cert.
-
-What for? If you finished this course + pay less then $150 and pass exam. You will have Splunk User Cert
+           Price: Free
+           How long will it take? 2 days for me with all quizz and lab pratices and final exam to have a cert.
+           What for? If you finished this course + pay less then $150 and pass exam. You will have Splunk User Cert
 
 Advance: If you have a AWS account and familiar with EC2 instances. You can install Splunk Entreprise to your EC2 instance. 
-*Explaination is avaiable at Install Splunk Entreprise on EC2
+[Command line is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Install%20Splunk%20Entreprise%20on%20EC2.md)
 
 ## Step 2: Splunk Fundamentals 2. 
 Based on its PDF material, I will do self learning and continue posting my learning progress and lab practices.
 
 ![PDF material is avaiable here](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%206.X%20Fundamentals%20Part%202%20(eLearning)%20.pdf)
 
-           2. Beyond saerch fundamentals
+           2. Beyond saerch fundamentals(https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
 
            3. Using transforming commands for visualizations
 
