@@ -85,10 +85,8 @@ PDF document is not avaiable, thus, learning document based on their course over
 [21. Using Acceleration Options](https://github.com/isabelle-le/Splunk-selflearning/blob/master/21.Using%20Acceleration%20Options:%20Data%20Models%20and%20tsidx%20Files.md)
 
 ## Advanced Searching and Reporting
-PDF document is not avaiable, thus, learning document based on their course overview
-
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/AdvancedSearchingReporting72Description.pdf)
 ## Analytics and Data Science
-
+[Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 ## Advanced Dashboards and Visualizations
-
+[Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
