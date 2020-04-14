@@ -86,6 +86,11 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 ## Advanced Searching and Reporting
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/AdvancedSearchingReporting72Description.pdf)
+
+[22. Using Search Efficiently + More Search Tuning]()
+
+[23. Manipulating and Filtering Data]()
+
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 ## Advanced Dashboards and Visualizations
