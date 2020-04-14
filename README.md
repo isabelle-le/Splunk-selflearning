@@ -87,9 +87,21 @@ PDF document is not avaiable, thus, learning document based on their course over
 ## Advanced Searching and Reporting
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/AdvancedSearchingReporting72Description.pdf)
 
-[22. Using Search Efficiently + More Search Tuning]()
+[22. Using Search Efficiently + More Search Tuning](https://github.com/isabelle-le/Splunk-selflearning/blob/master/22.%20Using%20Search%20Efficiently%20+%20More%20Search%20Tuning.md)
 
 [23. Manipulating and Filtering Data]()
+
+[24. Working with Multivalue Fields]()
+
+[25. Using Advanced Transactions]()
+
+[26. Working with Time]()
+
+[27. Combining Searches]()
+
+[28. Using Subsearches]()
+
+[29. Some Extra Tips]()
 
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
