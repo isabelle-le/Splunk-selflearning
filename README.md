@@ -89,11 +89,11 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 [22. Using Search Efficiently + More Search Tuning](https://github.com/isabelle-le/Splunk-selflearning/blob/master/22.%20Using%20Search%20Efficiently%20+%20More%20Search%20Tuning.md)
 
-[23. Manipulating and Filtering Data]()
+[23. Manipulating and Filtering Data](https://github.com/isabelle-le/Splunk-selflearning/blob/master/23.%20Manipulating%20and%20Filtering%20Data.md)
 
-[24. Working with Multivalue Fields]()
+[24. Working with Multivalue Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/24.%20Working%20with%20Multivalue%20Fields.md)
 
-[25. Using Advanced Transactions]()
+[25. Using Advanced Transactions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/25.%20Using%20Advanced%20Transactions.md)
 
 [26. Working with Time]()
 
