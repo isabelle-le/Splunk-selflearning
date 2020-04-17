@@ -95,7 +95,7 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 [25. Using Advanced Transactions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/25.%20Using%20Advanced%20Transactions.md)
 
-[26. Working with Time]()
+[26. Working with Time](https://www.hurricanelabs.com/splunk-tutorials/how-to-set-custom-time-range-presets-in-splunk)
 
 [27. Combining Searches]()
 
