@@ -97,11 +97,11 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 [26. Working with Time](https://www.hurricanelabs.com/splunk-tutorials/how-to-set-custom-time-range-presets-in-splunk)
 
-[27. Combining Searches]()
+[27. Combining Searches](https://github.com/isabelle-le/Splunk-selflearning/blob/master/27.%20Combining%20Searches.md)
 
-[28. Using Subsearches]()
+[28. Using Subsearches](https://github.com/isabelle-le/Splunk-selflearning/blob/master/28.%20Using%20Subsearches.md)
 
-[29. Some Extra Tips]()
+29. Some Extra Tips
 
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
