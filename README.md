@@ -103,6 +103,51 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 29. Some Extra Tips
 
+## Creating dashboad with Splunk
+[Course Topic](https://github.com/isabelle-le/Splunk-selflearning/blob/master/CreatingDashboards72_CourseDescription.pdf)
+
+[30. Creating a Prototype]()
+
+           § Define simple syntax for views
+           § Use best practices for creating views 
+           § Identify transforming commands
+           § Troubleshoot views
+           
+[31. Using Forms (Token)]()
+
+           § Explain how tokens work
+           § Use tokens with form inputs 
+           § Create cascading inputs
+           § Define types of token filters
+
+[32. Improving Performance (global searches)]()
+
+           § Identify ways to improve dashboard performance 
+           § Accelerate data models
+           § Use the tstats command
+           § Create global searches
+           
+[33. Customizing Dashboards]()
+
+           § Customize chart and panel properties 
+           § Set panel refresh and delay times
+           § Disable search access features
+           § Define event annotations
+           
+[34. Using Drilldowns (dynamic drilldowns)]()
+
+           § Define types of drilldowns 
+           § Identify predefined tokens 
+           § Create dynamic drilldowns
+
+[35. Adding Advanced Behaviors & Visualizations (event handler)]()
+
+           § Identify types of event handlers 
+           § Describe event actions
+           § Create contextual drilldowns
+           § Use simple XML extensions
+           § Define Splunk Custom Visualizations
+
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 ## Advanced Dashboards and Visualizations
