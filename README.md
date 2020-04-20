@@ -106,14 +106,14 @@ PDF document is not avaiable, thus, learning document based on their course over
 ## Creating dashboad with Splunk
 [Course Topic](https://github.com/isabelle-le/Splunk-selflearning/blob/master/CreatingDashboards72_CourseDescription.pdf)
 
-[30. Creating a Prototype]()
+[30. Creating a Prototype](https://github.com/isabelle-le/Splunk-selflearning/blob/master/30.%20Creating%20a%20Prototype.md)
 
            § Define simple syntax for views
            § Use best practices for creating views 
            § Identify transforming commands
            § Troubleshoot views
            
-[31. Using Forms (Token)]()
+[31. Using Forms (Token)](https://github.com/isabelle-le/Splunk-selflearning/blob/master/31.%20Using%20Forms.md)
 
            § Explain how tokens work
            § Use tokens with form inputs 
