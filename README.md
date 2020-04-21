@@ -70,36 +70,112 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 [14. Statistical Commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/14%2615%20Statistical%20%26%20eval%20commands.md)
 
-[15. eval Commands]()
+           § Performing statistical analysis with functions of the stat command
+           § Using fieldsummary
+           § Using appendpipe
+           § Using eventstats
+           § Using streamstats
+
+[15. eval Commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/5.%20Filtering%20and%20format%20result.md)
+           
+           § Using conversion functions
+           § Using data and time functions
+           § Using string functions
+           § Using comparison and conditional functions 
+           § Using informational functions
+           § Using statistical functions
+           § Using mathematical functions
+           § Using cryptographic functions
 
 [16. Lookups](https://github.com/isabelle-le/Splunk-selflearning/blob/master/16.Exploring%20Lookups.md)
 
+           § Including and excluding events based on lookup values
+           § Using KV Store lookups
+           § Using external lookups
+           § Using geospatial lookups
+           § Using database lookups
+           § Understanding best practices for lookups
+
 [17. Alert Actions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/17.%20Exploring%20Alerts.md)
+
+           § Referencing lookups in alerts
+           § Outputting alert results to a lookup
+           § Logging and indexing searchable alert events 
+           § Using a webhook alert action
 
 [18. Advanced Field Creation and Management ](https://github.com/isabelle-le/Splunk-selflearning/blob/master/18.%20Advanced%20Field%20Creation%20and%20Management.md)
 
+           § Using regex
+           § Using the erex command
+           § Using the rex command
+           § Identifying regex best practices
+
 [19. Working with Self-Describing Data and Files ](https://github.com/isabelle-le/Splunk-selflearning/blob/master/19.%20Working%20with%20Self-Describing%20Data%20and%20Files.md)
 
+           § Using the spath command
+           § Using the eval command with the spath function
+           § Extracting fields from table-formatted events with multikv
 [20. Advanced Macros](https://github.com/isabelle-le/Splunk-selflearning/blob/master/20.%20Using%20Acceleration%20Options:%20Reports%20and%20Summary%20Indexing.md)
 
+           § Using nested search macros
+           § Previewing search macros before executing 
+           § Using tags and event types in search macros
+
 [21. Using Acceleration Options](https://github.com/isabelle-le/Splunk-selflearning/blob/master/21.Using%20Acceleration%20Options:%20Data%20Models%20and%20tsidx%20Files.md)
+           § Using report acceleration 
+           § Using summary indexing
+           § Exploring data models using the datamodel command
+           § Using data model acceleration
+           § Working with tsidx files using the tstats command
 
 ## Advanced Searching and Reporting
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/AdvancedSearchingReporting72Description.pdf)
 
 [22. Using Search Efficiently + More Search Tuning](https://github.com/isabelle-le/Splunk-selflearning/blob/master/22.%20Using%20Search%20Efficiently%20+%20More%20Search%20Tuning.md)
 
+           § Review search architecture
+           § Understand how the components of a bucket (.tsidx and journal.gz files) are used
+           § How bloom filters are used to improve search speed
+           § Describe the parts of a search string
+           § Understand the use of centralized vs. distributable commands
+           § Create better searches
+           § Understand how segmenters are used in Splunk
+           § Use lispy to reduce the number of events read from disk
+
 [23. Manipulating and Filtering Data](https://github.com/isabelle-le/Splunk-selflearning/blob/master/23.%20Manipulating%20and%20Filtering%20Data.md)
+
+           § Divide search results into different groups, based on values in a specified field, using the bin command
+           § Regroup fields of search results using untable and xyseries
+           § Create a template for performing additional processing on a set of related fields using foreach
 
 [24. Working with Multivalue Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/24.%20Working%20with%20Multivalue%20Fields.md)
 
+           § Use multivalue eval functions to analyze and format data
+           § Use the makemv command to convert a single value into a multivalue field
+           § Use the mvexpand command to create separate events for each value in a multivalue field
+
 [25. Using Advanced Transactions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/25.%20Using%20Advanced%20Transactions.md)
+           
+           § Find events logged before or after a particular event occurs
+           § Compare complete vs. incomplete transactions
+           § Analyze transactions
 
 [26. Working with Time](https://www.hurricanelabs.com/splunk-tutorials/how-to-set-custom-time-range-presets-in-splunk)
 
+           § Use time modifiers
+           § Search for events using custom time ranges and time windows 
+           § Display and use using relative dates
+
 [27. Combining Searches](https://github.com/isabelle-le/Splunk-selflearning/blob/master/27.%20Combining%20Searches.md)
+           
+           § Use the append and appendcols commands (and know the differences)
+           § Use join and union (and when not to use them)
 
 [28. Using Subsearches](https://github.com/isabelle-le/Splunk-selflearning/blob/master/28.%20Using%20Subsearches.md)
+
+           § Use subsearches to provide filtering and other information to a main search
+           § Know when NOT to use subsearches 
+           § Troubleshoot subsearches
 
 29. Some Extra Tips
 
