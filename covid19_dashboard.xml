@@ -1,0 +1,298 @@
+<form theme="dark">
+  <label>Covid-19 journalier en Yvelines, IDF, France</label>//based search is not working due to Splunk perfromance<search id="based_search">
+    <query>index="corona" sourcetype="fra.csv"</query>
+  </search>//based search end////\\\\\\<fieldset submitButton="false">
+    <input type="radio" token="maille_nom">
+      <label>Select maille_nom</label>
+      <choice value="France">France</choice>
+      <choice value="Île-de-France">Île-de-France</choice>
+      <choice value="Yvelines">Yvelines</choice>
+      <default>France</default>
+      <change>
+        <condition label="France">
+          <set token="x_label">France</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+        <condition label="Yvelines">
+          <set token="x_label">Yvelines</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+        <condition label="IDF">
+          <set token="x_label">Île-de-France</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+      </change>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <title>Nombre de cas confirmer sont hospitalisés et dans les éhpad de COVID-19, $x_label$</title>
+        <search>
+          <query> index="corona" sourcetype="fra.csv"|fillnull cas_confirmes_ehpad | eval total_confirmes=(cas_confirmes + cas_confirmes_ehpad ) |search maille_nom=$maille_nom$|timechart max(total_confirmes)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Taux d'infection de cas confirmes COVID-19 par jour, $x_label$</title>
+        <search>
+          <query>(index="corona" maille_code=FRA sourcetype="fra.csv") |search maille_nom=$maille_nom$|fillnull cas_confirmes_ehpad | eval total_confirmes=(cas_confirmes + cas_confirmes_ehpad) | stats max(total_confirmes) as total_confirmes by date | sort 2 -date | stats first(total_confirmes) as current, last(total_confirmes) as previous | eval infected_ratio=round((((current / previous) - 1) * 100),1), infected_ratio=(infected_ratio + "%") | table infected_ratio</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas cas probables en EHPAD et EMS, $x_label$</title>
+        <search>
+          <query>index="corona" sourcetype="fra.csv" |search maille_nom=$maille_nom$ |fillnull cas_ehpad,cas_possibles_ehpad| eval "cas probables en EHPAD et EMS"=(cas_ehpad + cas_possibles_ehpad) 
+| timechart max("cas probables en EHPAD et EMS")</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Taux d'infection de cas probables COVID-19 par jour, $x_label$</title>
+        <search>
+          <query>(index="corona" maille_code=FRA sourcetype="fra.csv")|search maille_nom=$maille_nom$ |fillnull cas_ehpad,cas_possibles_ehpad | eval "cas probables en EHPAD et EMS"=(cas_ehpad + cas_possibles_ehpad)  | stats max("cas probables en EHPAD et EMS") as "cas_probables" by date | sort 2 -date | stats first(cas_probables) as current, last(cas_probables) as previous | eval infected_ratio=round((((current / previous) - 1) * 100),1), infected_ratio=(infected_ratio + "%") | table infected_ratio</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <single>
+        <title>Nombre de cas sont hospitalisés, $x_label$</title>
+        <search>
+          <query>  index="corona" sourcetype="fra.csv"|search maille_nom=$maille_nom$| timechart max(hospitalises)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas réanimation, $x_label$</title>
+        <search>
+          <query>  index="corona" sourcetype="fra.csv"|search maille_nom=$maille_nom$| timechart max(reanimation)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas décès à l'hôpital et dans les ehpad, $x_label$</title>
+        <search>
+          <query>  index="corona" sourcetype="fra.csv" |search maille_nom=$maille_nom$|fillnull deces_ehpad
+|eval"total_deces" = 'deces'+ 'deces_ehpad'| timechart max(total_deces)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas sont guéris, $x_label$</title>
+        <search>
+          <query>  index="corona" sourcetype="fra.csv"|search maille_nom=$maille_nom$ | timechart max(gueris)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Nombre de cas confirmes, sont hospitalisés, admis en réanimation, décès liés au COVID-19 , $x_label$ (heures supplémentaires)</title>
+        <search>
+          <query>index="corona" sourcetype="fra.csv" |search maille_nom=$maille_nom$
+|fillnull deces_ehpad, cas_confirmes, cas_confirmes_ehpad
+|eval"total_deces" = 'deces'+ 'deces_ehpad',total_confirmes=cas_confirmes + cas_confirmes_ehpad 
+| chart max(hospitalises) as hospitalisés, max(reanimation) as réanimation, max(total_deces) as "décès à l'hôpital et dans les ehpad" ,max(cas_confirmes) as cas_confirmés, max(gueris) as guéris by date</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.chart">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.overlayFields">réanimation,"décès à l'hôpital et dans les ehpad",cas_confirmés,guéris</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>bubble plot: nombre de cas sont hospitalisés, reanimation et décès , tous departments en France (heures supplémentaires). @@@ YVELINES au 12ème (/101 departments) @@@</title>
+      <chart>
+        <search>
+          <query>index="corona" sourcetype="fra.csv"  granularite = departement 
+| stats max(date) by maille_nom, hospitalises,deces, reanimation
+| sort 101 -max(date)
+| appendpipe run_in_preview=true
+    [|stats max(reanimation) by maille_nom, hospitalises,deces]</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">bubble</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">253</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>chiffe clé de $x_label$</title>
+      <table>
+        <search>
+          <query>index="corona" sourcetype="fra.csv"
+| where in  (maille_nom,"$maille_nom$")
+|dedup date
+|sort 7 -date 
+|table date,maille_nom,hospitalises,reanimation,deces,gueris</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">true</option>
+        <option name="wrap">true</option>
+        <format type="color" field="taux_infection">
+          <colorPalette type="minMidMax" maxColor="#DC4E41" minColor="#FFFFFF"></colorPalette>
+          <scale type="minMidMax"></scale>
+        </format>
+      </table>
+    </panel>
+    <panel>
+      <title>$x_label$ Depuis confinement (17/03/2020)</title>
+      <chart>
+        <search>
+          <query>index="corona" sourcetype="fra.csv"
+| where in  (maille_nom,"$maille_nom$")
+| sort -date
+| chart max(hospitalises) as totale_hospitalises, max(gueris) as totale_gueris, max(deces) as total_deces, max(reanimation)  as totale_reanimation over date</query>
+          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.overlayFields">"deaths_per_day: Paris"</option>
+        <option name="charting.chart.showDataLabels">minmax</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">525</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">small</option>
+        <option name="trellis.splitBy">_aggregation</option>
+      </chart>
+    </panel>
+  </row>
+</form>
