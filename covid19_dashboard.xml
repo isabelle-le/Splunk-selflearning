@@ -1,7 +1,11 @@
 <form theme="dark">
-  <label>Covid-19 journalier en Yvelines, IDF, France</label>//based search is not working due to Splunk perfromance<search id="based_search">
+  <label>Covid-19 journalier en Yvelines, IDF, France</label>
+  //based search is not working due to Splunk perfromance
+  <search id="based_search">
     <query>index="corona" sourcetype="fra.csv"</query>
-  </search>//based search end////\\\\\\<fieldset submitButton="false">
+  </search>/
+  /based search end
+  <fieldset submitButton="false">
     <input type="radio" token="maille_nom">
       <label>Select maille_nom</label>
       <choice value="France">France</choice>
