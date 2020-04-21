@@ -40,27 +40,80 @@ Based on its PDF material, I will do self learning and continue posting my learn
 
 [2. Beyond saerch fundamentals](https://github.com/isabelle-le/Splunk-selflearning/blob/master/2.%20Beyond%20search%20fundamentals.md)
 
+           § Search fundamentals review
+           § Case sensitivity
+           § Using the job inspector to view search performance
+
 [3. Using transforming commands for visualizations](https://github.com/isabelle-le/Splunk-selflearning/blob/master/3.%20Using%20transforming%20commands%20for%20visualizations.md)
+
+           § Explore data structure requirements
+           § Explore visualization types
+           § Create and format charts and timecharts
 
 [4. Using trendlines, mapping and single value commands](https://github.com/isabelle-le/Splunk-selflearning/blob/master/4.%20Using%20trendlines%2C%20mapping%20and%20Single%20value%20commands.md)
 
+           § The iplocation command 
+           § The geostats command 
+           § The geom command
+           § The addtotals command
+
 [5. Filtering & Formating results](https://github.com/isabelle-le/Splunk-selflearning/blob/master/5.%20Filtering%20and%20format%20result.md)
+
+           § The eval command
+           § Using the search and where commands to filter results 
+           § The filnull command
 
 [6. Correlating Events](https://github.com/isabelle-le/Splunk-selflearning/blob/master/6.%20Correlating%20Events.md)
 
+           § Identify transactions
+           § Group events using fields
+           § Group events using fields and time
+           § Search with transactions
+           § Report on transactions
+           § Determine when to use transactions vs. stats
+
 [7. Introduction to Knowledges objects](https://github.com/isabelle-le/Splunk-selflearning/blob/master/7.%20Introduction%20to%20Knowledges%20objects.md)
+
+           § Identify naming conventions 
+           § Review permissions
+           § Manage knowledge objects
 
 [8. Creating and Managing Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/8.%20Create%20and%20manage%20field.md)
 
+           § Perform regex field extractions using the Field Extractor (FX) 
+           § Perform delimiter field extractions using the FX
+
 [9. Creating Field Aliases and Calculated Fields](https://github.com/isabelle-le/Splunk-selflearning/blob/master/9.%20Creating%20Field%20Aliases%20and%20Calculated%20Fields.md)
+
+           § Describe, create, and use field aliases
+           § Describe, create and use calculated fields
 
 [10. Creating Tags and Event Types](https://github.com/isabelle-le/Splunk-selflearning/blob/master/10.%20Working%20with%20tags%20and%20even%20types.md)
 
+           § Create and use tags
+           § Describe event types and their uses 
+           § Create an event type
+
 [11. Creating and Using Macros](https://github.com/isabelle-le/Splunk-selflearning/blob/master/11.%20Creating%20and%20Using%20Macros.md)
+
+           § Describe macros
+           § Create and use a basic macro
+           § Define arguments and variables for a macro 
+           § Add and use arguments with a macro
 
 [12. Creating and Using Workflow Actions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/12.Creating%20and%20Using%20Workflow%20Actions.md)
 
+           § Describe the function of GET, POST, and Search workflow actions
+           § Create a GET workflow action
+           § Create a POST workflow action 
+           § Create a Search workflow action
+
 [13. Creating Data Models](https://github.com/isabelle-le/Splunk-selflearning/blob/master/13.Create%20Data%20Models.md)
+
+           § Describe the relationship between data models and pivot 
+           § Identify data model attributes
+           § Create a data model
+           § Use a data model in pivot
 
 ## Splunk Fundamentals 3. 
 
@@ -122,6 +175,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Using tags and event types in search macros
 
 [21. Using Acceleration Options](https://github.com/isabelle-le/Splunk-selflearning/blob/master/21.Using%20Acceleration%20Options:%20Data%20Models%20and%20tsidx%20Files.md)
+
            § Using report acceleration 
            § Using summary indexing
            § Exploring data models using the datamodel command
