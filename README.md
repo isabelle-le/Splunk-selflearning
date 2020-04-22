@@ -250,7 +250,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Create cascading inputs
            § Define types of token filters
 
-[32. Improving Performance (global searches)]()
+[32. Improving Performance (global searches)](https://github.com/isabelle-le/Splunk-selflearning/blob/master/32.%20Improving%20Performance.md)
 
            § Identify ways to improve dashboard performance 
            § Accelerate data models
