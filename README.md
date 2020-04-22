@@ -257,7 +257,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Use the tstats command
            § Create global searches
            
-[33. Customizing Dashboards]()
+[33. Customizing Dashboards](https://github.com/isabelle-le/Splunk-selflearning/blob/master/33.%20Customizing%20Dashboards.md)
 
            § Customize chart and panel properties 
            § Set panel refresh and delay times
