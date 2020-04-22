@@ -250,6 +250,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Use tokens with form inputs 
            § Create cascading inputs
            § Define types of token filters
+ Out of this topic but seem to be useful: [add timepicker to dashboard and use css to turn off default rendering] (https://www.youtube.com/watch?v=kilsJYpGWAE&list=PLSr58-DJdRyYs9AdSpi7T6N9F22CpnYZg&index=2)
 
 [32. Improving Performance (global searches)](https://github.com/isabelle-le/Splunk-selflearning/blob/master/32.%20Improving%20Performance.md)
 
