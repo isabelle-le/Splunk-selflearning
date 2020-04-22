@@ -1,11 +1,9 @@
-<form theme="dark">
-  <label>Covid-19 journalier en Yvelines, IDF, France</label>
-  //based search is not working due to Splunk perfromance
-  <search id="based_search">
+<form theme="dark"  hideEdit="false">
+  <label>Covid-19 journalier en Yvelines, IDF, France</label>//based search is not working due to Splunk perfromance<search id="based_search">
     <query>index="corona" sourcetype="fra.csv"</query>
-  </search>/
-  /based search end
+  </search>//based search end////\\\\\\
   <fieldset submitButton="false">
+<!-- Radio button with condition -->
     <input type="radio" token="maille_nom">
       <label>Select maille_nom</label>
       <choice value="France">France</choice>
@@ -35,6 +33,10 @@
         <search>
           <query> index="corona" sourcetype="fra.csv"|fillnull cas_confirmes_ehpad | eval total_confirmes=(cas_confirmes + cas_confirmes_ehpad ) |search maille_nom=$maille_nom$|timechart max(total_confirmes)</query>
         </search>
+        <!-- Disable visibility for test -->
+        <option name="link.openSearch.visible">false</option> 
+        <option name="link.inspectSearch.visible">false</option> 
+         <option name="link.exportResults.visible">false</option> 
         <option name="colorBy">trend</option>
         <option name="drilldown">none</option>
         <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
@@ -157,19 +159,65 @@
           <query>index="corona" sourcetype="fra.csv" |search maille_nom=$maille_nom$
 |fillnull deces_ehpad, cas_confirmes, cas_confirmes_ehpad
 |eval"total_deces" = 'deces'+ 'deces_ehpad',total_confirmes=cas_confirmes + cas_confirmes_ehpad 
-| chart max(hospitalises) as hospitalisés, max(reanimation) as réanimation, max(total_deces) as "décès à l'hôpital et dans les ehpad" ,max(cas_confirmes) as cas_confirmés, max(gueris) as guéris by date</query>
+| chart max(hospitalises) as hospitalisés, max(reanimation) as réanimation, max(total_deces) as "décès à l'hôpital et dans les ehpad" ,max(cas_confirmes) as cas_confirmés, max(gueris) as guéris by _time</query>
           <earliest>0</earliest>
           <latest></latest>
         </search>
-        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisMiddle</option>
+        <!-- Secondary search that drives the annotations -->
+        <search type="annotation">
+          <query>| makeresults 
+| eval _time="2020-03-17 00:00:00", message="confinement:rester chez vous", type="type1"
+|append [| makeresults 
+| eval _time="2020-04-18 00:00:00", message="
+31/5000
+décès accepté hors de l'hôpital", type="type1"]
+ | eval annotation_label = message </query>
+           <earliest>0</earliest>
+          <latest></latest>
+         </search>
+
+        <!-- Customize the event annotation colors based on category name -->
+        <option name="charting.annotation.categoryColors">{"type1":"0xffcc00"}</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
         <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
-        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisLabelsX.majorUnit">show</option>
         <option name="charting.axisY.abbreviation">auto</option>
         <option name="charting.chart">area</option>
         <option name="charting.chart.nullValueMode">connect</option>
         <option name="charting.chart.overlayFields">réanimation,"décès à l'hôpital et dans les ehpad",cas_confirmés,guéris</option>
         <option name="charting.drilldown">none</option>
         <option name="refresh.display">progressbar</option>
+   
+          
+         <option name="charting.axisTitleX.visibility">visible</option>
+         <option name="charting.axisTitleY.visibility">visible</option>
+         <option name="charting.axisTitleY2.visibility">visible</option>
+         <option name="charting.axisX.abbreviation">none</option>
+         <option name="charting.axisX.scale">linear</option>
+         <option name="charting.axisY.abbreviation">none</option>
+         <option name="charting.axisY.scale">linear</option>
+         <option name="charting.axisY2.abbreviation">none</option>
+         <option name="charting.axisY2.enabled">0</option>
+         <option name="charting.axisY2.scale">inherit</option>
+         <option name="charting.chart.bubbleMaximumSize">50</option>
+         <option name="charting.chart.bubbleMinimumSize">10</option>
+         <option name="charting.chart.bubbleSizeBy">area</option>
+         <option name="charting.chart.showDataLabels">none</option>
+         <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+         <option name="charting.chart.stackMode">default</option>
+         <option name="charting.chart.style">shiny</option>
+         <option name="charting.layout.splitSeries">0</option>
+         <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+         <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+         <option name="charting.legend.mode">standard</option>
+         <option name="charting.legend.placement">right</option>
+         <option name="charting.lineWidth">2</option>
+         <option name="trellis.enabled">0</option>
+         <option name="trellis.scales.shared">1</option>
+         <option name="trellis.size">medium</option>
+        
+        
+        
       </chart>
     </panel>
   </row>
