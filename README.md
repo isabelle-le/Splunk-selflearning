@@ -266,7 +266,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Disable search access features
            § Define event annotations
            
-[34. Using Drilldowns (dynamic drilldowns)]()
+[34. Using Drilldowns (dynamic drilldowns)](https://github.com/isabelle-le/Splunk-selflearning/blob/master/34.%20Using%20Drilldowns.md)
 
            § Define types of drilldowns 
            § Identify predefined tokens 
