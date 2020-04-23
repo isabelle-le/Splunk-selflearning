@@ -1,0 +1,131 @@
+<form theme="dark">
+  <label>version1</label>
+  <!--base search-->
+  <search id="base_search">
+    <query>index="corona" sourcetype="fra.csv"|table _time,maille_nom,granularite,cas_confirmes,cas_ehpad,cas_confirmes_ehpad,cas_possibles_ehpad,deces,deces_ehpad,reanimation,hospitalises,gueris,depistes,source_nom |search maille_nom = "$form.where$" hospitalises="$form.hospital$" </query>
+  </search>
+  <!--end base search-->
+  <fieldset submitButton="false">
+    <input type="radio" token="maille_nom">
+      <label>Select maille_nom</label>
+      <choice value="France">France</choice>
+      <choice value="Île-de-France">Île-de-France</choice>
+      <choice value="Yvelines">Yvelines</choice>
+      <default>France</default>
+      <change>
+        <condition label="France">
+          <set token="x_label">France</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+        <condition label="Yvelines">
+          <set token="x_label">Yvelines</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+        <condition label="IDF">
+          <set token="x_label">Île-de-France</set>
+          <set token="x_tok">$value$</set>
+        </condition>
+      </change>
+    </input>
+    <input type="dropdown" token="where">
+      <label>Maille Nom</label>
+      <search base="base_search">
+        <query>|stats by maille_nom</query>
+      </search>
+      <fieldForLabel>maille_nom</fieldForLabel>
+      <fieldForValue>maille_nom</fieldForValue>
+      <choice value="*">All</choice>
+      <default>*</default>
+      <initialValue>*</initialValue>
+    </input>
+    <input type="text" token="hospital">
+      <label>hospitalises</label>
+      <default>*</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>bubble plot: nombre de cas sont hospitalisés, reanimation et décès , tous departments en France (heures supplémentaires). @@@ YVELINES au 12ème (/101 departments) @@@</title>
+      <chart>
+        <search>
+          <query>index="corona" sourcetype="fra.csv" |search granularite = departement |search maille_nom="$form.where$"
+| stats max(_time) by maille_nom, hospitalises,deces, reanimation
+| sort 101 -max(_time)
+| appendpipe run_in_preview=true
+    [|stats max(reanimation) by maille_nom, hospitalises,deces]</query>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">bubble</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">253</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+        <drilldown>
+          <set token="form.where">$click.value$</set>
+        </drilldown>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>chiffe clé, 8 departments dans  Île-de-France</title>
+      <table>
+        <search base="base_search">
+          <query>|search maille_nom=$where$
+|sort  -_time
+|table _time,maille_nom,cas_confirmes,cas_ehpad,cas_confirmes_ehpad,cas_possibles_ehpad,deces,deces_ehpad,reanimation,hospitalises,gueris,depistes,source_nom</query>
+        </search>
+        <option name="count">10</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">true</option>
+        <option name="wrap">true</option>
+        <format type="color" field="taux_infection">
+          <colorPalette type="minMidMax" maxColor="#DC4E41" minColor="#FFFFFF"></colorPalette>
+          <scale type="minMidMax"></scale>
+        </format>
+        <drilldown>
+          <!--<condition field="maille_nom">
+            <set token="form.where">$click.value2$</set>
+          </condition>
+          <condition field="_time">
+            <set token="form.where">$row.maille_nom$</set>
+          </condition>
+          <condition field="cas_confirmes"></condition>-->
+          <condition field="hospitalises">
+            <set token="form.hospital">$click.value2$</set>
+            </condition>
+        </drilldown>
+      </table>
+    </panel>
+  </row>
+</form>
