@@ -11,7 +11,7 @@ Splunk is not an open source but you can enjoy 60 days trial with entrepise vers
 ## Stage 2: analyse covid19 data via Splunk 
 I am at Yvelines with at least 70 known positive cases in my area. I am still negative to covid-19, but, I am isolated to the outside community. In order to kill my freetime, I am learning Splunk(work required) instead of outdoor activities as normal saturday/sunday time
 
-[Dashboard](http://192.168.1.51:8000/en-US/app/search/coronavirus_v1?form.maille_nom=France) is avaiable until May.05 with log in username=User and pw=$plunkEntr3prise
+[Dashboard](http://127.0.0.1:8000/en-US/app/search/coronavirus_v1?form.maille_nom=France) is avaiable until May.05 with log in username=User and pw=$plunkEntr3prise
 
 
 
