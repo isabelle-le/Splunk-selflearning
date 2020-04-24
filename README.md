@@ -272,7 +272,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Identify predefined tokens 
            § Create dynamic drilldowns
 
-[35. Adding Advanced Behaviors & Visualizations (event handler)]()
+[35. Adding Advanced Behaviors & Visualizations (event handler)](https://github.com/isabelle-le/Splunk-selflearning/edit/master/35.%20Adding%20Advanced%20Behaviors%20&%20Visualizations.md)
 
            § Identify types of event handlers 
            § Describe event actions
