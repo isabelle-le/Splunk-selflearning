@@ -282,5 +282,8 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
+
+[35. Analytics Framework]()
+
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
