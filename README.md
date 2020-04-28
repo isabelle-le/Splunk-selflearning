@@ -12,11 +12,6 @@ Splunk is not an open source but you can enjoy 60 days trial with entrepise vers
 I am at Yvelines with at least 70 known positive cases in my area. I am still negative to covid-19, but, I am isolated to the outside community. In order to kill my freetime, I am learning Splunk(work required) instead of outdoor activities as normal saturday/sunday time
 
 [Dashboard](http://127.0.0.1:8000/en-US/app/search/coronavirus_v1?form.maille_nom=France) is avaiable until May.05 with log in username=User and pw=$plunkEntr3prise
-
-
-
-
-## Stage 3: record visual learning material(video on youtube) to help others. 
            
 # Why Splunk? 
 Beside the job requirement, Splunk is a big data tool which is good for anykinds of data. The basic processing components are like any other big data tool. Which are:
