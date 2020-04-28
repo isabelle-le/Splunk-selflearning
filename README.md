@@ -283,7 +283,19 @@ PDF document is not avaiable, thus, learning document based on their course over
 ## Analytics and Data Science
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 
-[35. Analytics Framework]()
+[36. Analytics Framework + Exploratory data Analysis](https://github.com/isabelle-le/Splunk-selflearning/blob/master/36.%20Analytics%20Framework%20%2B%20Exploratory%20data%20Analysis.md)
+
+           § Analytics Framework
+           § Exploratory data Analysis
+
+
+[37. Machine Learning Workflow](https://github.com/isabelle-le/Splunk-selflearning/blob/master/37.%20Machine%20Learning%20Workflow.md)
+
+           • Define some concepts and terms associated with machine learning
+           • Describe the machine learning workflow
+           • Split data for training and testing models
+           • Fit and apply models in Splunk
+           • Use Machine Learning Toolkit Showcases and Assistants
 
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
