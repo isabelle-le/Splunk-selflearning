@@ -291,6 +291,11 @@ PDF document is not avaiable, thus, learning document based on their course over
            • Split data for training and testing models
            • Fit and apply models in Splunk
            • Use Machine Learning Toolkit Showcases and Assistants
-
+           
+[38. Classification](https://github.com/isabelle-le/Splunk-selflearning/blob/master/38.%20Classification.md)
+           
+           § Define key classification terms
+           § Evaluate classifier results
+           
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
