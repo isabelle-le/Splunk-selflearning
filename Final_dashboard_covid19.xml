@@ -1,0 +1,306 @@
+<form theme="dark" hideEdit="false">
+  <label>Covid-19 journalier en Yvelines, IDF, France</label>
+  <init>
+    <set token="form.where">*</set>
+  </init>
+  <!--base search-->
+  <search id="base_search">
+    <query>index="corona" sourcetype="fra.csv"|table _time,maille_nom,granularite,cas_confirmes,cas_ehpad,cas_confirmes_ehpad,cas_possibles_ehpad,deces,deces_ehpad,reanimation,hospitalises,gueris,depistes,source_nom |search maille_nom = "$form.where$" hospitalises="$form.hospital$"  </query>
+    <earliest>0</earliest>
+    <latest></latest>
+    <!--          <earliest>$earliest$</earliest>
+          <latest>$latest$</latest>-->
+  </search>
+  <!--end base search-->
+  <fieldset submitButton="false">
+    <input type="dropdown" token="where">
+      <label>Maille Nom</label>
+      <search base="base_search">
+        <query>|stats by maille_nom</query>
+      </search>
+      <fieldForLabel>maille_nom</fieldForLabel>
+      <fieldForValue>maille_nom</fieldForValue>
+      <choice value="*">Tous</choice>
+      <default>Yvelines</default>
+      <initialValue>Yvelines</initialValue>
+    </input>
+    <input type="text" token="hospital" depends="$hidden$">
+      <label>hospitalises</label>
+      <default>*</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <title>Nombre de cas confirmer sont hospitalisés et dans les éhpad de COVID-19, $form.where$</title>
+        <search base="base_search">
+          <query>|search maille_nom=$where$ |fillnull cas_confirmes_ehpad | eval total_confirmes=(cas_confirmes + cas_confirmes_ehpad ) |timechart max(total_confirmes)</query>
+        </search>
+        <!-- Disable visibility for test -->
+        <option name="link.openSearch.visible">false</option>
+        <option name="link.inspectSearch.visible">false</option>
+        <option name="link.exportResults.visible">false</option>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Taux d'infection de cas confirmes COVID-19 par jour, $form.where$</title>
+        <search>
+          <query>(index="corona" maille_code=FRA sourcetype="fra.csv") |search maille_nom=$where$|fillnull cas_confirmes_ehpad | eval total_confirmes=(cas_confirmes + cas_confirmes_ehpad) | stats max(total_confirmes) as total_confirmes by _time | sort 2 - _time| stats first(total_confirmes) as current, last(total_confirmes) as previous | eval infected_ratio=round((((current / previous) - 1) * 100),1), infected_ratio=(infected_ratio + "%") | table infected_ratio</query>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <!--depends="$hidden$"-->
+      <single>
+        <title>Nombre de cas cas probables en EHPAD et EMS, $form.where$</title>
+        <search base="base_search">
+          <query>|search maille_nom=$where$ |fillnull cas_ehpad,cas_possibles_ehpad| eval "cas probables en EHPAD et EMS"=(cas_ehpad + cas_possibles_ehpad) 
+| timechart max("cas probables en EHPAD et EMS")</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel rejects="$hide_panel_%_singlevalue2$">
+      <!--depends="$hidden$"-->
+      <single>
+        <title>Taux d'infection de cas probables COVID-19 par jour, $form.where$</title>
+        <search>
+          <query>(index="corona" maille_code=FRA sourcetype="fra.csv")|search maille_nom=$where$ |fillnull cas_ehpad,cas_possibles_ehpad | eval "cas probables en EHPAD et EMS"=(cas_ehpad + cas_possibles_ehpad)  | stats max("cas probables en EHPAD et EMS") as "cas_probables" by _time | sort 2 - _time | stats first(cas_probables) as current, last(cas_probables) as previous | eval infected_ratio=round((((current / previous) - 1) * 100),1), infected_ratio=(infected_ratio + "%") | table infected_ratio</query>
+          <done>
+            <condition match="'job.resultCount'==0">
+              <set token="hide_panel_%_singlevalue2"></set>
+            </condition>
+            <condition>
+              <unset token="hide_panel_%_singlevalue2"></unset>
+            </condition>
+          </done>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <single>
+        <title>Nombre de cas sont hospitalisés, $form.where$</title>
+        <search base="base_search">
+          <query> |search maille_nom=$where$| timechart max(hospitalises)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas réanimation, $form.where$</title>
+        <search base="base_search">
+          <query>  |search maille_nom=$where$ | timechart max(reanimation)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="colorMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas décès à l'hôpital et dans les ehpad, $form.where$</title>
+        <search base="base_search">
+          <query>  |search maille_nom=$where$ |fillnull deces_ehpad
+|eval"total_deces" = 'deces'+ 'deces_ehpad'| timechart max(total_deces)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Nombre de cas sont guéris, $form.where$</title>
+        <search base="base_search">
+          <query> |search maille_nom=$where$ | timechart max(gueris)</query>
+        </search>
+        <option name="colorBy">trend</option>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trendColorInterpretation">inverse</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Nombre de cas confirmes, sont hospitalisés, admis en réanimation, décès liés au COVID-19 , $form.where$ (heures supplémentaires)</title>
+        <search type="annotation">
+          <query>| makeresults 
+| eval _time="2020-03-17 00:00:00", message="confinement:rester chez vous", type="type1"
+|append [| makeresults 
+| eval _time="2020-04-18 00:00:00", message="décès accepté hors de l'hôpital", type="type1"]
+ | eval annotation_label = message </query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <search base="base_search">
+          <query> |search maille_nom=$where$ 
+|fillnull deces_ehpad, cas_confirmes, cas_confirmes_ehpad
+|eval"total_deces" = 'deces'+ 'deces_ehpad',total_confirmes=cas_confirmes + cas_confirmes_ehpad 
+| chart max(hospitalises) as hospitalisés, max(reanimation) as réanimation, max(total_deces) as "décès à l'hôpital et dans les ehpad" ,max(cas_confirmes) as cas_confirmés, max(gueris) as guéris by _time</query>
+        </search>
+        <!-- Secondary search that drives the annotations -->
+        <!-- Customize the event annotation colors based on category name -->
+        <option name="charting.annotation.categoryColors">{"type1":"0xffcc00"}</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisLabelsX.majorUnit">show</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">area</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.overlayFields">réanimation,"décès à l'hôpital et dans les ehpad",cas_confirmés,guéris</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">293</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>bubble plot: nombre de cas sont hospitalisés, reanimation et décès , tous departments en France (heures supplémentaires). exploration pour $form.where$</title>
+      <chart>
+        <search base="base_search">
+          <query> |search granularite = departement |search maille_nom="$form.where$"
+| stats max(_time) by maille_nom, hospitalises,deces, reanimation
+| sort 101 -max(_time)
+| appendpipe run_in_preview=true
+    [|stats max(reanimation) by maille_nom, hospitalises,deces]</query>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">bubble</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">1</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">253</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+        <drilldown>
+          <set token="form.where">$click.value$</set>
+        </drilldown>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>chiffe clé pour $form.where$</title>
+      <table>
+        <search base="base_search">
+          <query>|search maille_nom=$where$
+|sort  -_time
+|table _time,maille_nom,cas_confirmes,cas_ehpad,cas_confirmes_ehpad,cas_possibles_ehpad,deces,deces_ehpad,reanimation,hospitalises,gueris,depistes,source_nom</query>
+        </search>
+        <option name="count">10</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">true</option>
+        <option name="wrap">true</option>
+        <format type="color" field="taux_infection">
+          <colorPalette type="minMidMax" maxColor="#DC4E41" minColor="#FFFFFF"></colorPalette>
+          <scale type="minMidMax"></scale>
+        </format>
+        <drilldown>
+          <condition field="maille_nom">
+            <set token="form.where">$click.value2$</set>
+          </condition>
+          <condition field="_time">
+            <set token="form.where">$row.maille_nom$</set>
+          </condition>
+          <condition field="cas_confirmes"></condition>
+          <!--<condition field="hospitalises">
+            <set token="form.hospital">$click.value2$</set>
+            </condition>-->
+        </drilldown>
+      </table>
+    </panel>
+  </row>
+</form>
