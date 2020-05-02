@@ -297,5 +297,10 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Define key classification terms
            § Evaluate classifier results
            
+[39. Anomaly Detection](https://github.com/isabelle-le/Splunk-selflearning/blob/master/39.%20Anomaly%20Detection.md)
+
+           § Define anomaly detection
+           § Identify anomaly detection use cases
+           § Describe Splunk anomaly detection solutions       
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
