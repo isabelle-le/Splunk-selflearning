@@ -40,3 +40,12 @@ Both are using anomalie detection fit density function.
 Nothing to special to highlight. He runs through builed in experiment with small/ clean data set.
 
 # 4. Custom Machine Learning, incl.: Expansion with MLSPL API, Advanced Containerization
+See doc [Add custom ML to MLTK](https://docs.splunk.com/Documentation/MLApp/5.1.0/API/Overview)
+
+See [video](https://www.youtube.com/watch?v=p5PK2nuq5EI&list=PLSr58-DJdRyalgKiMaqyrGvpmgKs3mhhQ&index=7)
+
+You can use DLTK to run your algrs on a GPU or use JupyterNB to experiment your old code. 
+
+![](image./S11.png)
+
+* New algrs on Splunk [ unbounded learning on stream](https://conf.splunk.com/files/2019/slides/DEV1139.pdf)
