@@ -276,6 +276,8 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Define Splunk Custom Visualizations
 
 ## Analytics and Data Science
+[Summary of getting started with MLTK recoding from Splunk](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Getting%20started%20with%20MLTK.md)
+
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 
 [36. Analytics Framework + Exploratory data Analysis](https://github.com/isabelle-le/Splunk-selflearning/blob/master/36.%20Analytics%20Framework%20%2B%20Exploratory%20data%20Analysis.md)
