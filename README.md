@@ -306,6 +306,7 @@ PDF document is not avaiable, thus, learning document based on their course over
            § Describe Splunk anomaly detection solutions    
            
 [40. Regressors](https://github.com/isabelle-le/Splunk-selflearning/blob/master/40.%20Regressors.md)
+
 We covered category prediction in section 38. So we consider only regressors in this section.
 
            § Define estimation and prediction
