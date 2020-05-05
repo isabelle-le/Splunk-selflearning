@@ -280,6 +280,8 @@ PDF document is not avaiable, thus, learning document based on their course over
 
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk%207.0%20for%20Analytics%20%26%20Data%20Science%20MLTK%203.0%20Description.pdf)
 
+[MLTK on SPlunk doc](https://docs.splunk.com/Documentation/MLApp/5.1.0/User/Algorithms)
+
 [36. Analytics Framework + Exploratory data Analysis](https://github.com/isabelle-le/Splunk-selflearning/blob/master/36.%20Analytics%20Framework%20%2B%20Exploratory%20data%20Analysis.md)
 
            § Analytics Framework
