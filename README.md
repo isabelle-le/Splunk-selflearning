@@ -315,5 +315,28 @@ We covered category prediction in section 38. So we consider only regressors in 
            § Identify estimation and prediction use cases 
            § Describe Splunk estimation and prediction
            Solutions
+     
+## Additional:
+It will be a miss if we stop learning about ML at this stage. Normally, our data is messy and not ready to apply ML algrs( unlike kaggle prepared dataset). We need to have additional skill sets to manipulate, analyse data. That is being said, we cover as follow:
+
+           1. Preprocessing
+           2. Featue Extraction
+           3. Utility algorithms
+           4. K-fold cross validation
+           5. Cross-validation
+           6. Clustering algorithms
+           7. Time Series analysis
+[41. Preprocessing]()
+
+           Imputer
+           RobustScaler
+           StandardScaler
+           
+42. Featue Extraction
+43. Utility algorithms
+44. K-fold cross validation
+45. Cross-validation
+46. Clustering algorithms
+47. Time Series analysis
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
