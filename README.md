@@ -326,7 +326,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            5. Cross-validation
            6. Clustering algorithms
            7. Time Series analysis
-[41. Preprocessing]()
+[41. Preprocessing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/41.%20Preprocessing%20(Prepare%20Data).md)
 
            Imputer
            RobustScaler
