@@ -332,7 +332,15 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            RobustScaler
            StandardScaler
            
-42. Featue Extraction
+[42. Featue Extraction](https://github.com/isabelle-le/Splunk-selflearning/blob/master/42.%20Feature%20Extraction.md)
+
+           FieldSelector
+           HashingVectorizer
+           ICA
+           KernelPCA
+           NPR
+           PCA
+           TFIDF
 43. Utility algorithms
 44. K-fold cross validation
 45. Cross-validation
