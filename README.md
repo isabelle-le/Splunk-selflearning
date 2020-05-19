@@ -341,7 +341,11 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            NPR
            PCA
            TFIDF
-43. Utility algorithms
+[43. Utility algorithms](https://github.com/isabelle-le/Splunk-selflearning/blob/master/43.%20Utility%20algorithms.md)
+
+           ACF (autocorrelation function)
+           PACF (partial autocorrelation function)
+           
 44. K-fold cross validation
 45. Cross-validation
 46. Clustering algorithms
