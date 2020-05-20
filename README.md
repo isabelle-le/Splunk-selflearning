@@ -347,8 +347,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            PACF (partial autocorrelation function)
            
 44. Time Series analysis
-45. K-fold cross validation
-46. Cross-validation
-47. Clustering algorithms
+45. Cross-validation
+46. Clustering algorithms
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
