@@ -322,31 +322,36 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            1. Preprocessing
            2. Featue Extraction
            3. Utility algorithms
-           4. K-fold cross validation
-           5. Cross-validation
-           6. Clustering algorithms
-           7. Time Series analysis
+           4. Cross-validation
+           5. Clustering algorithms
+           6. Time Series analysis
 [41. Preprocessing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/41.%20Preprocessing%20(Prepare%20Data).md)
 
-           Imputer
-           RobustScaler
-           StandardScaler
+           1.Imputer
+           2.RobustScaler
+           3.StandardScaler
            
 [42. Featue Extraction](https://github.com/isabelle-le/Splunk-selflearning/blob/master/42.%20Feature%20Extraction.md)
 
-           FieldSelector
-           HashingVectorizer
-           ICA
-           KernelPCA
-           NPR
-           PCA
-           TFIDF
+           1.FieldSelector
+           2.HashingVectorizer
+           3.ICA
+           4.KernelPCA
+           5.NPR
+           6.PCA
+           7.TFIDF
 [43. Utility algorithms](https://github.com/isabelle-le/Splunk-selflearning/blob/master/43.%20Utility%20algorithms.md)
 
            ACF (autocorrelation function)
            PACF (partial autocorrelation function)
            
-44. Time Series analysis
+[44. Time Series analysis](https://github.com/isabelle-le/Splunk-selflearning/blob/master/44.%20Time%20Series%20Analysis.md)
+           
+          1. Time Series analysis
+          2. Kalman filter
+          3.ARIMA
+          4.StatSpaceForecast
+     
 45. Cross-validation
 46. Clustering algorithms
 ## Advanced Dashboards and Visualizations
