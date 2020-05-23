@@ -352,7 +352,18 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
           3.ARIMA
           4.StatSpaceForecast
      
-45. Cross-validation
-46. Clustering algorithms
+[45. Cross-validation](https://github.com/isabelle-le/Splunk-selflearning/blob/master/45.%20Cross%20validationn.md)
+
+           1. k_fold cross validation
+           disadvantage : (1) can not used in saved model (2) expensive conputation time with Splunk MLTK
+           
+[46. Clustering algorithms](https://github.com/isabelle-le/Splunk-selflearning/blob/master/46.%20Clustering%20algorithms.md)
+           
+           1. Birch
+           2. DBSCAN
+           3. K-means
+           4. SpectralClustering
+           5. X-means
+           
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
