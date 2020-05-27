@@ -323,8 +323,10 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            2. Featue Extraction
            3. Utility algorithms
            4. Cross-validation
-           5. Clustering algorithms
+           5. Clustering algorithms with scoring
            6. Time Series analysis
+           7. Configure algorithm performance costs
+           8. Statistical functions and testings
 [41. Preprocessing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/41.%20Preprocessing%20(Prepare%20Data).md)
 
            1.Imputer
@@ -364,6 +366,37 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            3. K-means
            4. SpectralClustering
            5. X-means
+           Bonus: 1. Clustering scoring 
+                  2. Pairwise distance scoring
+     
+[47. Configure algorithm performance costs](https://github.com/isabelle-le/Splunk-selflearning/blob/master/47.%20Configure%20algorithm%20performance%20costs.md)
+ 
+[48. Statistical functions and testing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/48.%20Statistical%20functions%20and%20testing.md)
+
+           Statistical functions (statsfunctions)
+           1. Describe
+           2. Moment
+           3. Pearson
+           4. Spearman
+           5. Tmean
+           6. Trim
+           7. Tvar
+           
+           Statistical testing (statstest)
+           1. Analysis of Variance (Anova)
+           2. Augmented Dickey-Fuller (Adfuller)
+           3. Energy distance
+           4. Kolmogorov-Smirnov (KS) test (1 sample)
+           5. Kolmogorov-Smirnov (KS) test (2 samples)
+           6. Kwiatkowski-Phillips-Schmidt-Shin (KPSS)
+           7. MannWhitneyU
+           8. Normal-test
+           9. One-way ANOVA
+           10. T-test (1 sample)
+           11. T-test (2 independent samples)
+           12. T-test (2 related samples)
+           13. Wasserstein distance
+           14. Wilcoxon
            
 ## Advanced Dashboards and Visualizations
 [Course Topics](https://github.com/isabelle-le/Splunk-selflearning/blob/master/Splunk7.3AdvDashAndViz_CourseDescription.pdf)
