@@ -366,7 +366,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            3. K-means
            4. SpectralClustering
            5. X-means
-           Bonus: 1. Clustering scoring 
+           Bonus: 1. Silhouette score (score on categorical data)
                   2. Pairwise distance scoring
      
 [47. Configure algorithm performance costs](https://github.com/isabelle-le/Splunk-selflearning/blob/master/47.%20Configure%20algorithm%20performance%20costs.md)
