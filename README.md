@@ -382,6 +382,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            6. Trim
            7. Tvar
   [49, Statistical testing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/49.%20Statistical%20testing.md)
+  
            Statistical testing (statstest)
            1. Analysis of Variance (Anova)
            2. Augmented Dickey-Fuller (Adfuller)
