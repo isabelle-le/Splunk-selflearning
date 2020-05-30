@@ -371,7 +371,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
      
 [47. Configure algorithm performance costs](https://github.com/isabelle-le/Splunk-selflearning/blob/master/47.%20Configure%20algorithm%20performance%20costs.md)
  
-[48. Statistical functions and testing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/48.%20Statistical%20functions%20and%20testing.md)
+[48. Statistical functions](https://github.com/isabelle-le/Splunk-selflearning/blob/master/48.%20Statistical%20functions.md)
 
            Statistical functions (statsfunctions)
            1. Describe
@@ -381,7 +381,7 @@ It will be a miss if we stop learning about ML at this stage. Normally, our data
            5. Tmean
            6. Trim
            7. Tvar
-           
+  [49, Statistical testing](https://github.com/isabelle-le/Splunk-selflearning/blob/master/49.%20Statistical%20testing.md)
            Statistical testing (statstest)
            1. Analysis of Variance (Anova)
            2. Augmented Dickey-Fuller (Adfuller)
